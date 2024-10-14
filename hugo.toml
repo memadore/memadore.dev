@@ -1,0 +1,61 @@
+baseURL = "https://memadore.dev"
+languageCode = 'en-us'
+title = 'Marc-Etienne Madore'
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Meta description
+description = "Marc-Etienne's personal website"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hello 👋'
+homeIntroContent = """
+I'm a data engineer based in Quebec, Canada. I currently work at [The Browser Company](https://thebrowser.company/), making the internet a better place.
+"""
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/memadore/"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/memadore"
+
+# Main menu pages
+[[params.menu]]
+name = "Home"
+url = "/"
+
+[[params.menu]]
+name = "Posts"
+url = "/posts"
+
+[[params.menu]]
+name = "Projects"
+url = "/projects"
+
+[[params.menu]]
+name = "About"
+url = "/about"
+
+# Syntax highligth on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
