@@ -8,21 +8,21 @@
     (resources.Get "css/custom.css")
     (resources.Get "css/colors/default.css")
     }}
-    
+
     {{ with .Site.Params.colorPalette }}
-    
+
     {{ $path := printf "css/colors/%s.css" . }}
     {{ $CSS = $CSS | append (resources.Get $path)}}
-    
+
     {{ end }}
-    
+
     {{
     $combined := $CSS
     | resources.Concat "assets/combined.css"
     | minify
     | fingerprint
     }}
-    
+
     <link rel="stylesheet" href="{{ $combined.RelPermalink }}" media="all">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
