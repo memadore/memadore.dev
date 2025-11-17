@@ -1,4 +1,0 @@
-[submodule "themes/typo"]
-	path = themes/typo
-	url = https://github.com/tomfran/typo.git
-	branch = v1.13.0
