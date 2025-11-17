@@ -1,4 +1,4 @@
-baseurl = "memadore.dev"
+baseurl = "/"
 languageCode = "en-us"
 pagination.pagerSize = 5
 defaultContentLanguage = 'en'
