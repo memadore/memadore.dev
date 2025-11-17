@@ -1,61 +1,136 @@
-baseURL = "https://memadore.dev"
-languageCode = 'en-us'
-title = 'Marc-Etienne Madore'
-theme = 'typo'
+baseurl = "memadore.dev"
+languageCode = "en-us"
+pagination.pagerSize = 5
+defaultContentLanguage = 'en'
+disableDefaultLanguageRedirect = false
 
-[taxonomies]
-tag = 'tags'
+# Required for Chroma and the custom syntax highlighting.
+[markup.highlight]
+  noClasses = false
 
 [params]
-# Meta description
-description = "Marc-Etienne's personal website"
+  contentTypeName = "posts"
+  showMenuItems = 5
+  showLanguageSelector = true
+  fullWidthTheme = true
+  centerTheme = false
+  autoCover = true
 
-# Appearance settings
-theme = 'auto'
-colorPalette = 'default'
-hideHeader = false
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = true
 
-# Intro on main page, content is markdown
-homeIntroTitle = 'Hello 👋'
-homeIntroContent = """
-I'm a data engineer based in Quebec, Canada. I currently work at [The Browser Company](https://thebrowser.company/), making the internet a better place.
-"""
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  updatedDatePrefix = "Updated"
 
-# Lists parameters
-paginationSize = 100
-listSummaries = true
-listDateFormat = '2 Jan 2006'
+  # whether to show a page's estimated reading time
+  readingTime = false
 
-# Breadcrumbs
-breadcrumbs = true
+  # whether to show a table of contents
+  # can be overridden in a page's front-matter
+  # Toc = false # default
 
-# Social icons
-[[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/memadore/"
+  # set title for the table of contents
+  # can be overridden in a page's front-matter
+  # TocTitle = "Table of Contents" # default
 
-[[params.social]]
-name = "github"
-url = "https://github.com/memadore"
+  # Set date/time format for posts
+  # This will impact the date/time displayed on
+  # index.html, the posts list page, and on posts themselves
+  # This value can also be configured per-post on front matter
+  # If you have any issues with the timezone rendering differently
+  # than you expected, please ensure your timezone is correctly set
+  # on your server.
+  # This value can be customized according to Hugo documentation:
+  # https://gohugo.io/functions/time/format/
+  # Default value (no changes needed):
+  # dateFormat = "2006-01-02"
+  # Example format, with date, time, and timezone abbreviation:
+  # dateFormat = "2006-01-02 3:04:06 PM MST"
 
-# Main menu pages
-[[params.menu]]
-name = "Home"
-url = "/"
+[languages]
+  [languages.en]
+    disabled = false
+    languageCode = 'en-us'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = "Home"
+    weight = 2
 
-[[params.menu]]
-name = "Posts"
-url = "/posts"
+    [languages.en.params]
+      subtitle = "A simple, retro theme for Hugo"
+      owner = ""
+      keywords = ""
+      copyright = ""
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
 
-[[params.menu]]
-name = "Projects"
-url = "/projects"
+      [languages.en.params.logo]
+        logoText = "Marc-Etienne Madore"
+        logoHomeLink = "/"
 
-[[params.menu]]
-name = "About"
-url = "/about"
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "posts"
+          name = "Posts"
+          url = "/posts"
+        [[languages.en.menu.main]]
+          identifier = "projects/"
+          name = "Projects"
+          url = "/projects"
+        [[languages.en.menu.main]]
+          identifier = "about"
+          name = "About"
+          url = "/about"
 
-# Syntax highligth on code blocks
-[markup]
-[markup.highlight]
-style = 'algol'
+  [languages.fr]
+    disabled = false
+    languageCode = 'fr-ca'
+    languageDirection = 'ltr'
+    languageName = 'Français'
+    title = "Home"
+    weight = 1
+
+    [languages.fr.params]
+      subtitle = "A simple, retro theme for Hugo"
+      owner = "Marc-Etienne Madore"
+      keywords = ""
+      copyright = ""
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+      [languages.fr.params.logo]
+        logoText = "Marc-Etienne Madore"
+        logoHomeLink = "/"
+
+      [languages.fr.menu]
+        [[languages.fr.menu.main]]
+          identifier = "about"
+          name = "À propos"
+          url = "/fr/about"
+        [[languages.fr.menu.main]]
+          identifier = "posts"
+          name = "Publications"
+          url = "/fr/posts"
+        [[languages.fr.menu.main]]
+          identifier = "projects"
+          name = "Projets"
+          url = "/fr/projects"
+
+[module]
+[[module.imports]]
+  path = 'github.com/panr/hugo-theme-terminal/v4'

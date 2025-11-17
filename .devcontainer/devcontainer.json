@@ -4,5 +4,14 @@
 	"features": {
 		"ghcr.io/devcontainers/features/hugo:1": {}
 	},
-	"postCreateCommand": "sudo apt-get update && sudo apt-get install pipx -y && pipx ensurepath && pipx install pre-commit"
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install pipx -y && pipx ensurepath && pipx install pre-commit",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"tamasfe.even-better-toml",
+				"streetsidesoftware.code-spell-checker",
+				"yzhang.markdown-all-in-one"
+			]
+		}
+	}
 }
