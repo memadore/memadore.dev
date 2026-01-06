@@ -1,4 +1,4 @@
-FROM ghcr.io/gohugoio/hugo:v0.152.2 AS builder
+FROM ghcr.io/gohugoio/hugo:v0.154.2 AS builder
 
 WORKDIR /src
 COPY . /src
